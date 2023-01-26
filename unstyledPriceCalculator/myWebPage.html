@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="stylesheet" href="myWebPage.css">
+<head>
+  <title>Price Calculator</title>
+</head>
+<body>
+
+<div class="intro">
+  <h1>How much to charge?</h1>
+  <p><b>If you were a freelance web designer, how much should you charge for a website? Fill out the form and find out!</b></p>
+</div>
+
+<div class="form">
+  <form id="budget" action="javascript:calculatePrice()">
+    <label for="Default salary"><b>You can choose a default salary if you have no knowledge of the market prices.</b></label>
+    <select name="Default salary" id="salary">
+      <option value="None">-----</option>
+      <option value="30000">30000</option>
+      <option value="35000">35000</option>
+      <option value="38000">38000</option>
+      <option value="40000">40000</option>
+    </select><br><br>
+    <label for="salary"><b>What annual salary seems suitable for you?</b></label>
+    <input type="text" id="salary" name="salary"/><br><br>
+    <label for="days"><b>How many days do you think it will take you to make the website?</b></label>
+    <input type="text" id="days" name="days"/><br><br>
+    <input type="submit" value="Calculate your price!"><br><br>
+    <label id="finalPrice"> ------ </label>
+  </form>
+</div>
+
+
+<script>
+  function calculatePrice() {
+    var s = document.getElementById("salary").value;
+    var d = document.getElementById("days").value;
+    console.log("Calculating price")
+    console.log(s)
+    console.log(d)
+    let finalPrice = 0;
+    dailyRate = s/365;
+    finalPrice = Math.ceil(dailyRate * d) * 100;
+    document.getElementById("finalPrice").innerHTML = finalPrice;
+  }
+
+var select = document.getElementsByTagName('select')[0];
+var option1 = document.getElementById('Default Salary');
+var option2 = document.getElementById('salary');
+
+select.addEventListener('change', function(e) {
+  if (this.value === 'option1') {
+    option2.setAttribute('disabled', true)
+    console.log(option2);
+  }
+  if (this.value === 'option2') {
+    option1.setAttribute('disabled', true)
+    console.log(option2);
+  }
+})
+  </script>
+
+</body>
+</html>

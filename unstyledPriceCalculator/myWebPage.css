@@ -1,0 +1,32 @@
+div {
+    background-color: lightblue;
+    opacity: 0.9;
+  }
+
+.intro {
+    position:relative;
+    top: 190px;
+    left: 500px;
+    width: 800px;
+    border: 3px solid lightblue;
+    padding: 10px;
+  }
+
+.form{
+    position:relative;
+    top: 200px;
+    left: 500px;
+    width: 800px;
+    border: 3px solid lightblue;
+    padding: 10px;
+  }
+
+body {
+    background-image: url("image.jpeg");
+    background-color: #cccccc; 
+    height: 950px; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size:cover; 
+}
+
